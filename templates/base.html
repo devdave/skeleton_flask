@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>{{title}}</title>
+        <link rel="stylesheet" type="text/css" href="/static/base.css">
+    {% endblock %}
+</head>
+<body>
+    {% block body %}
+    <ul class="trail_nav">
+        {% for element in trail %}
+            <li><a href="{{element.href}}">{{element.name}}</a></li>
+        {% endfor %}
+    </ul>
+        {% block content %}
+        <h1>{{title}}</h1>
+        {% endblock content %}
+    {% endblock body %}
+</body>
+</html>
